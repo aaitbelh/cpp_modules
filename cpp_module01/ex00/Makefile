@@ -1,12 +1,19 @@
-SRC = megaphone.cpp
-OBJ = megaphone.o
-NAME = megaphone
-FLAGS = -Wall -Wextra -Werror -c  -std=c++98
 
-all : $(NAME) 
-$(NAME) : $(OBJ)
-	c++ $(FLAGS) $(SRC) -o megaphone
+NAME = Zombie
+SRCS = Zombie.cpp randomChump.cpp newZombie.cpp \
+
+OBJS = $(SRCS:.cpp=.o)
+
+CC = g++
+CFLAGS = -Wall -Werror -Wextra
+
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 clean :
-	rm -f $(OBJ)
-	rm -f megaphone
-re : clean all
+	rm  $(OBJS)
+fclean : clean
+	rm $(NAME)
+re : fclean all

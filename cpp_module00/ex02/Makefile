@@ -1,7 +1,7 @@
 
-NAME = Phonbook
+NAME = Account
 
-SRCS = Phonebook.cpp  GettersAndSetters.cpp\
+SRCS = tests.cpp Account.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -10,6 +10,7 @@ int Phonebook::setPhonNumber(std::string input){
         if(!isdigit(input[i]))
             return (0);
     }
+    phonnumber = input;
     return (1);
 }
 std::string Phonebook::getDarkestsecret(){

@@ -28,7 +28,11 @@ Phonebook Addcontact()
         if(newcontact.setPhonNumber(input))
             break;
         else
+        {
             std::cout << "only degit are acceptable try again !!" << std::endl;
+            input.clear();
+            std::cin.clear();
+        }
     }
     std::cout << "darkestsecret: ";
     std::cin >> input;
@@ -69,9 +73,9 @@ std::string tookinput()
 
 void showcontact(class Phonebook contact[], int size)
 {
+    std::cout << "id " << "|" << "firstname " << "|" << "lastname  " << "|" <<  "nickname  " << std::endl;
     for(int i =0 ; i < size; i++)
     {
-        std::cout << "id " << "|" << "firstname " << "|" << "lastname  " << "|" <<  "nickname  " << std::endl;
         std::cout << i + 1 << "  |" << contact[i].getfirstname(1) << "|" << contact[i].getlastname(1) << "|" << contact[i].getnickname(1) << std::endl;
     }
 }
@@ -81,16 +85,15 @@ void getcontactid(Phonebook contact[], int size){
 
     while(1)
     {
-        std::cout << "enter the id or: ";
+        std::cout << "enter the id: ";
         std::cin >> id;
         if(id > size || id <= 0)
             std::cout << "invalid id" << std::endl;
         else
         {
             id -= 1;
-            std::cout << contact[id].getfirstname(0) << std::endl << contact[id].getlastname(0) << std::endl << contact[id].getnickname(0)
-                <<std::endl << contact[id].getPhonNumber() 
-                << contact[id].getDarkestsecret() << std::endl;
+            std::cout << "firstname: " << contact[id].getfirstname(0) << std::endl << "lastname: " << contact[id].getlastname(0) << std::endl << "nickname: " << contact[id].getnickname(0)
+                <<std::endl << "PhoneNumber: " << contact[id].getPhonNumber() << std::endl << "darksecret: " <<contact[id].getDarkestsecret() << std::endl;
             break;
         }
     }
