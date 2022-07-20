@@ -6,14 +6,14 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 10:27:02 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/07/20 11:55:06 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/07/20 19:40:22 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
 
-const std::string Weapon::getType(){
+const std::string &Weapon::getType(){
 	return (type);
 }
 
@@ -26,3 +26,8 @@ Weapon::Weapon(std::string type)
 {
 	this->type = type;
 }
+
+Weapon::~Weapon(){
+	
+}
+

@@ -1,6 +1,6 @@
 
 NAME = Huamn
-SRCS = HumanA.cpp HumanB.cpp Weapon.cpp Weapon.cpp main.cpp
+SRCS = HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
