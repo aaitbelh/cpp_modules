@@ -1,7 +1,6 @@
 
-NAME = Phonbook
-
-SRCS = Phonebook.cpp  GettersAndSetters.cpp\
+NAME = Zombie
+SRCS = Zombie.cpp randomChump.cpp newZombie.cpp zombieHorde.cpp main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

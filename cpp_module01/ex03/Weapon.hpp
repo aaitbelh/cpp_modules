@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 18:23:20 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/07/20 09:27:55 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/07/20 10:55:53 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/07/20 11:53:15 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-void Zombie::setnameOfZombie(std::string name){
-	this->name = name;
-}
+#include <iostream>
+#include <string>
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-Zombie::Zombie(){
-	std::cout << "New Zombie is created" << std::endl;
-}
+class Weapon{
+	public:
+		const	std::string getType();
+		void	setType(std::string);
+		Weapon(std::string);
+	private:
+		std::string type;
+};
 
-Zombie::~Zombie(){
-	std::cout << "Zombie: " << name << " is destroyed" << std::endl;
-}
-
-Zombie* newZombie( std::string name ){
-	Zombie *newElement;
-	newElement = new Zombie;
-	newElement->setnameOfZombie(name);
-	return (newElement);
-}
+#endif 

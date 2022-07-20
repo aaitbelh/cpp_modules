@@ -5,7 +5,7 @@ SRCS = tests.cpp Account.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-CC = g++
+CC = c++
 CFLAGS = -Wall -Werror -Wextra
 
 

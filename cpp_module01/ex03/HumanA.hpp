@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 18:23:20 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/07/20 09:27:55 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/07/20 10:29:38 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/07/20 11:36:15 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
+#include "Weapon.hpp"
 
-void Zombie::setnameOfZombie(std::string name){
-	this->name = name;
-}
+class HumanA
+{
+	private:
+		Weapon Weapon;
+		std::string name;
+	public:
+		void attack();
+		HumanA(std::string name, class Weapon gun);
+		~HumanA();
+};
 
-Zombie::Zombie(){
-	std::cout << "New Zombie is created" << std::endl;
-}
-
-Zombie::~Zombie(){
-	std::cout << "Zombie: " << name << " is destroyed" << std::endl;
-}
-
-Zombie* newZombie( std::string name ){
-	Zombie *newElement;
-	newElement = new Zombie;
-	newElement->setnameOfZombie(name);
-	return (newElement);
-}
+#endif
