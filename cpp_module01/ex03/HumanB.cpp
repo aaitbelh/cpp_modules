@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 18:35:56 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/07/20 19:22:23 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/07/21 11:21:52 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ HumanB::HumanB(std::string name)
 	this->name = name;
 }
 
-void HumanB::setWeapon(Weapon gun)
+void HumanB::setWeapon(Weapon &gun)
 {
-	this->gun = gun;
+	this->gun = &gun;
 }
 
 HumanB::~HumanB()
@@ -28,5 +28,5 @@ HumanB::~HumanB()
 }
 void HumanB::attack()
 {
-	std::cout << name << " attacks with their " << gun.getType() << std::endl;
+	std::cout << name << " attacks with their " << gun->getType() << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 10:27:02 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/07/20 19:40:22 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/07/21 11:21:12 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ void Weapon::setType(std::string type)
 Weapon::Weapon(std::string type)
 {
 	this->type = type;
+}
+
+Weapon::Weapon()
+{
+	
 }
 
 Weapon::~Weapon(){
