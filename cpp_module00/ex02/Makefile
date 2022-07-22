@@ -6,7 +6,7 @@ SRCS = tests.cpp Account.cpp \
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 
 all: $(NAME)

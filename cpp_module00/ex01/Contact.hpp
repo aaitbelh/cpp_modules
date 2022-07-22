@@ -1,10 +1,10 @@
-# ifndef PHONEBOOK_H
-#define PHONEBOOK_H
+/* ************************************************************************** */
+#ifndef CONTACT_HPP
+#define	CONTACT_HPP
 
-#include <iostream>
 #include <string>
-
-class Phonebook
+#include <iostream>
+class Contact
 {
     private:
         std::string firstname;
@@ -24,6 +24,5 @@ class Phonebook
         std::string getDarkestsecret();
         void    setDarkestsecret(std::string);
 };
-
 
 #endif
