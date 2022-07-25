@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: casper <casper@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 13:43:55 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/07/25 14:03:38 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/07/25 10:11:03 by casper           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,23 @@ void Harl::error( void ){
 
 void Harl::complain(std::string level)
 {
-	switch (level)
+	int	getIndex = -1;
+	std::string tab[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	for(int i = 0; i < 4; i++)
 	{
-	case "debug":
-		
-		break;
-	
-	default:
-		break;
+		if(level == tab[i])
+		{
+			getIndex = i;
+			break;
+		}
+	}
+	switch(getIndex)
+	{
+		case 0:std::cout << "[ " <<tab[0] << " ]" << std::endl; debug();std::cout << std::endl;
+		case 1:std::cout << "[ " << tab[1] << " ]" << std::endl; info();std::cout << std::endl;
+		case 2:std::cout << "[ " <<tab[2] << " ]" <<std::endl; warning();std::cout << std::endl;
+		case 3:std::cout << "[ " << tab[3] << " ]" <<std::endl; error();std::cout << std::endl;
+			break;
+		default: std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }
