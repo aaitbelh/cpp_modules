@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 09:59:20 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/07/22 19:50:04 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/07/23 13:00:00 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,50 @@ Contact* Phonbook::getContact()
 
 void	Phonbook::setContact(Contact newone, int index)
 {
-	this->contacts[index % 8] = newone;
+    if(index > 8)
+        index = 0;
+	this->contacts[index] = newone;
 }
 
 Contact Addcontact()
 {
     Contact newcontact;
     std::string input;
-    std::cout<<"firstname: ";
-    std::getline(std::cin, input);
-    if(std::cin.eof())
-        exit(1);
+    while(1)
+    {
+        std::cout<<"firstname: ";
+        std::getline(std::cin, input);
+        if(std::cin.eof())
+            exit(1);
+        if(input.size())
+            break;
+        else
+            std::cerr << "the input is empty try again !" << std::endl;
+    }
     newcontact.setfirstname(input);
-    std::cout << "lastname: ";
-    std::getline(std::cin, input);
-    if(std::cin.eof())
-        exit(1);
+    while(1)
+    {
+        std::cout << "lastname: ";
+        std::getline(std::cin, input);
+        if(std::cin.eof())
+            exit(1);        
+        if(input.size())
+            break;
+        else
+            std::cerr << "the fieled is empty try again !" << std::endl;
+    }
     newcontact.setlastname(input);
-    std::cout << "nickname: ";
-	std::getline(std::cin, input);
-    if(std::cin.eof())
-        exit(1);
+    while(1)
+    {
+        std::cout << "nickname: ";
+        std::getline(std::cin, input);
+        if(std::cin.eof())
+            exit(1);
+        if(input.size())
+            break;
+        else
+            std::cerr << "the input is empty try again !" << std::endl;
+    }
     newcontact.setnickname(input);
     while(1){
         std::cout << "Phonenumber: ";
@@ -54,10 +77,17 @@ Contact Addcontact()
             input.clear();
         }
     }
-    std::cout << "darkestsecret: ";
-    std::getline(std::cin, input);
-    if(std::cin.eof())
-        exit(1);
+    while(1)
+    {
+        std::cout << "darkestsecret: ";
+        std::getline(std::cin, input);
+        if(std::cin.eof())
+            exit(1);
+        if(input.size())
+            break;
+        else
+            std::cerr << "the input is empty try again !" << std::endl;
+    }
     newcontact.setDarkestsecret(input);
     return (newcontact);
 }

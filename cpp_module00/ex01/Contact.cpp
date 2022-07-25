@@ -5,7 +5,7 @@ std::string Contact::getPhonNumber(){
 }
 
 int Contact::setPhonNumber(std::string input){
-    for(int i =0; i < input.size(); i++)
+    for(int i =0; i < (int)input.size(); i++)
     {
         if(!isdigit(input[i]))
             return (0);

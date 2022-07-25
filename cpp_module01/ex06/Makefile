@@ -1,7 +1,7 @@
 
-NAME = Account
+NAME = harlFilter
 
-SRCS = tests.cpp Account.cpp \
+SRCS = main.cpp Harl.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -13,10 +13,6 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $<
-
 clean :
 	rm -f $(OBJS)
 fclean : clean
