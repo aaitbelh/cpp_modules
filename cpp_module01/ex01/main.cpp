@@ -1,7 +1,16 @@
 #include "Zombie.hpp"
 
-int main()
+void NewZombieTotestLeaks()
 {
 	Zombie *ptr;
-	ptr = zombieHorde(10, "Grboz");
+	ptr = zombieHorde(10, "grboz");
+	randomChump("mamella lkhatr");
+	delete[] ptr;
+
+}
+
+int main()
+{
+	NewZombieTotestLeaks();
+	system("leaks Zombie");
 }

@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:54:37 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/07/24 17:34:16 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/07/27 19:06:10 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,12 @@ int main(int ac, char **av)
 		replaceTheOccurence(str, s1, s2);
 	std::fstream ReplaceFile;
 	ReplaceFile.open(nameOfFile.append(".replace"), std::fstream::out);
-	ReplaceFile << str;
 	if(!ReplaceFile)
 		std::cerr << "error in openen file" << std::endl;
+	ReplaceFile << str;
+	if(!NewFile.eof())
+		ReplaceFile<<std::endl;
+	ReplaceFile.close();
+	NewFile.close();
 	return (0);
 }

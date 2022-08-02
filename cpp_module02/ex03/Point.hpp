@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/20 18:35:56 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/07/26 09:37:40 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/02 15:38:03 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/02 17:09:14 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#ifndef POINT_HPP
+#define POINT_HPP
 
-HumanB::HumanB(std::string name)
-{
-	this->name = name;
-}
+#include <iostream>
+#include "Fixed.hpp"
 
-void HumanB::setWeapon(Weapon &gun)
+class Point
 {
-	this->gun = &gun;
-}
+	private:
+		Fixed const x;
+		Fixed const y;
+	public:
+};
+bool bsp( Point const a, Point const b, Point const c, Point const point);	
 
-HumanB::~HumanB()
-{
-	
-}
-void HumanB::attack()
-{
-	std::cout << name << " attacks with their " << gun->getType() << std::endl;
-}
+
+#endif

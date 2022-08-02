@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/20 18:35:56 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/07/26 09:37:40 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/02 15:51:51 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/02 17:05:48 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "Point.hpp"
 
-HumanB::HumanB(std::string name)
+Point::Point()
 {
-	this->name = name;
-}
-
-void HumanB::setWeapon(Weapon &gun)
-{
-	this->gun = &gun;
-}
-
-HumanB::~HumanB()
-{
-	
-}
-void HumanB::attack()
-{
-	std::cout << name << " attacks with their " << gun->getType() << std::endl;
+	x(0);
 }

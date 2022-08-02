@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 10:55:53 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/07/20 21:01:25 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/07/26 09:18:39 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,13 @@
 #include <iostream>
 #include <string>
 class Weapon{
+	private:
+		std::string type;
 	public:
 		const	std::string &getType();
 		void	setType(std::string type);
 		Weapon(std::string type);
-		Weapon();
 		~Weapon();
-	private:
-		std::string type;
 };
 
 #endif 

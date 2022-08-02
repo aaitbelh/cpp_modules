@@ -1,5 +1,5 @@
 
-NAME = main
+NAME = replace
 
 SRCS = main.cpp
 

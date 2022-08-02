@@ -1,6 +1,15 @@
 #include "Zombie.hpp"
 #include <iostream>
-int main(){
+
+void NewZombieTotestLeaks()
+{
 	Zombie *ptr;
 	ptr = newZombie("grboz");
+	delete (ptr);
+}
+
+int main(){
+
+	NewZombieTotestLeaks();
+	system("leaks Zombie");
 }

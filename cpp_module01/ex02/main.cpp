@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:35:57 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/07/20 10:03:01 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/07/26 08:59:15 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int main(){
 	std::cout<< &str << std::endl;
 	std::cout<< stringPTR << std::endl;
 	std::cout<< &stringREF << std::endl;
-	std::cout << str << std::endl;
 	std::cout << *stringPTR << std::endl;
 	std::cout << stringREF << std::endl;
 }

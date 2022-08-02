@@ -5,19 +5,93 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 19:31:21 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/01 14:32:53 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/01 14:32:45 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/02 15:49:03 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const Fixed& 	Fixed::max(Fixed const &a, Fixed const &b)
+{
+	return (a.getRawBits() > b.getRawBits() ? a : b);
+}
+
+//postfix operator
+Fixed	Fixed::operator++(int)
+{
+	Fixed tmpObject;
+	tmpObject.FpValue = this->FpValue;
+	this->FpValue++;
+	return (tmpObject);
+}
+
+//prefeix operator
+Fixed&		Fixed::operator++()
+{
+	this->FpValue++;
+	return (*this);
+}
+
+Fixed&	Fixed::operator/(Fixed const &c1)
+{
+	this->FpValue = (this->FpValue / (float)c1.FpValue) * (1 << 8);
+	return (*this);
+}
+
+Fixed&	Fixed::operator*(Fixed const &c1)
+{
+	this->FpValue = (this->FpValue * c1.FpValue) >> 8;
+	return (*this);
+}
+
+Fixed&	Fixed::operator+(Fixed const &c1)
+{
+	this->FpValue = this->FpValue + c1.FpValue;
+	return (*this);
+}
+
+Fixed&	Fixed::operator-(Fixed const &c1)
+{
+	this->FpValue = this->FpValue - c1.FpValue;
+	return (*this);
+}
+
+bool	Fixed::operator>(Fixed const &c1)
+{
+	return (this->getRawBits() > c1.FpValue ? 1 : 0);
+}
+
+bool	Fixed::operator<(Fixed const &c1)
+{
+		return (this->FpValue < c1.FpValue ? 1 : 0);
+}
+
+bool	Fixed::operator>=(Fixed const &c1)
+{
+	return (this->FpValue >= c1.FpValue ? 1 : 0);
+}
+
+bool	Fixed::operator<=(Fixed const &c1)
+{
+	return (this->FpValue <= c1.FpValue ? 1 : 0);
+}
+
+bool	Fixed::operator==(Fixed const &c1)
+{
+	return (this->FpValue == c1.FpValue ? 1 : 0);
+}
+
+bool	Fixed::operator!=(Fixed const &c1)
+{
+	return (this->FpValue != c1.FpValue ? 1 : 0);
+}
 
 std::ostream& operator<<(std::ostream &out, Fixed const &c)
 {
 	out<<c.toFloat();
 	return (out);
 }
-
 Fixed::Fixed()
 {
 	FpValue = 0;
@@ -32,7 +106,7 @@ Fixed::Fixed(const int value)
 Fixed::Fixed(const float value)
 {
 	std::cout << "Float constructor called" << std::endl;
-	FpValue = roundf(value * (1 << this->BitFractional));
+	FpValue = roundf(value * float(1 << this->BitFractional));
 }
 
 Fixed::Fixed(Fixed const &Oldclass)
