@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: casper <casper@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:40:24 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/04 14:41:39 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/04 11:13:30 by casper           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 int main()
 {
-	ClapTrap a("name");
-	a.attack("mamella");
+	ClapTrap Kira;
+	Kira.attack("L");
+	ClapTrap L;
+	L = Kira;
+	L.attack("missa");
+	ClapTrap Missa(L);
+	Missa.attack("him self");
 }
