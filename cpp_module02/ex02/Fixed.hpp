@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 14:32:38 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/02 15:48:56 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:38:11 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ class Fixed
 		bool	operator<=(Fixed const &c1);
 		bool	operator==(Fixed const &c1);
 		bool	operator!=(Fixed const &c1);
-		Fixed&	operator+(Fixed const &c1);
-		Fixed&	operator-(Fixed const &c1);
-		Fixed&	operator*(Fixed const &c1);
-		Fixed&	operator/(Fixed const &c1);
+		Fixed	operator+(Fixed const &c1);
+		Fixed	operator-(Fixed const &c1);
+		Fixed	operator*(Fixed const &c1);
+		Fixed	operator/(Fixed const &c1);
 		Fixed&	operator++();
 		Fixed	operator++(int);
 		static const Fixed& max(Fixed const &a, Fixed const &b);

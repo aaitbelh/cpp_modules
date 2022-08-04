@@ -6,13 +6,14 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 10:26:31 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/07/31 19:38:02 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/04 08:40:51 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 
+// static int i = 0;
 Fixed::Fixed()
 {
 	FpValue = 0;
@@ -23,7 +24,6 @@ Fixed::Fixed(Fixed &Oldclass)
 {
 	std::cout << "copy constructor called" << std::endl;
 	*this = Oldclass;
-	
 }
 Fixed& Fixed::operator= (Fixed &NewFixed)
 {

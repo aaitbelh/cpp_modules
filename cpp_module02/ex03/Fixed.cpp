@@ -5,18 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 14:32:45 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/02 15:49:03 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/02 17:22:29 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/03 21:53:44 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
 const Fixed& 	Fixed::max(Fixed const &a, Fixed const &b)
 {
 	return (a.getRawBits() > b.getRawBits() ? a : b);
 }
 
+/******************operators overloading*************************/
 //postfix operator
 Fixed	Fixed::operator++(int)
 {
@@ -33,28 +33,31 @@ Fixed&		Fixed::operator++()
 	return (*this);
 }
 
-Fixed&	Fixed::operator/(Fixed const &c1)
+Fixed	Fixed::operator/(Fixed const &c1)
 {
-	this->FpValue = (this->FpValue / (float)c1.FpValue) * (1 << 8);
-	return (*this);
+	Fixed tmp;
+	tmp.FpValue = (this->FpValue / (float)c1.FpValue) * (1 << this->BitFractional);
+	return (tmp);
+}
+Fixed	Fixed::operator*(Fixed const &c1)
+{
+	Fixed tmp;
+	tmp.FpValue = (this->FpValue * c1.FpValue) >> 8;
+	return (tmp);
 }
 
-Fixed&	Fixed::operator*(Fixed const &c1)
+Fixed	Fixed::operator+(Fixed const &c1)
 {
-	this->FpValue = (this->FpValue * c1.FpValue) >> 8;
-	return (*this);
+	Fixed tmp;
+	tmp.FpValue = this->FpValue + c1.FpValue;
+	return (tmp);
 }
 
-Fixed&	Fixed::operator+(Fixed const &c1)
+Fixed	Fixed::operator-(Fixed const &c1)const
 {
-	this->FpValue = this->FpValue + c1.FpValue;
-	return (*this);
-}
-
-Fixed&	Fixed::operator-(Fixed const &c1)
-{
-	this->FpValue = this->FpValue - c1.FpValue;
-	return (*this);
+	Fixed tmp;
+	tmp.FpValue = this->FpValue - c1.FpValue;
+	return (tmp);
 }
 
 bool	Fixed::operator>(Fixed const &c1)
@@ -92,38 +95,36 @@ std::ostream& operator<<(std::ostream &out, Fixed const &c)
 	out<<c.toFloat();
 	return (out);
 }
+
+/****************************constractors**************************/
 Fixed::Fixed()
 {
 	FpValue = 0;
-	std::cout << "default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int value)
 {
-	std::cout << "Int constructor called" << std::endl;
 	FpValue = value << this->BitFractional;
 }
 Fixed::Fixed(const float value)
 {
-	std::cout << "Float constructor called" << std::endl;
 	FpValue = roundf(value * float(1 << this->BitFractional));
 }
 
 Fixed::Fixed(Fixed const &Oldclass)
 {
-	std::cout << "copy constructor called" << std::endl;
 	*this = Oldclass;
 }
 Fixed& Fixed::operator= (Fixed const &NewFixed)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	this->FpValue = NewFixed.getRawBits();
 	return  *this;
 }
 Fixed::~Fixed()
 {
-	std::cout << "destructor called" << std::endl;
 }
+
+/***************************methodes************************/
 
 int Fixed::getRawBits(void)const
 {

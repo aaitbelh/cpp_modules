@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 10:15:23 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/07/31 19:37:16 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/04 08:40:55 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Fixed
 	public:
 		Fixed();
 		Fixed(Fixed &Oldclass);
-		Fixed	&operator= (Fixed &NewFixed);
+		Fixed&	operator= (Fixed &NewFixed);
 		~Fixed();
 		int getRawBits(void) const;
 		void setRawBits(const int raw);
