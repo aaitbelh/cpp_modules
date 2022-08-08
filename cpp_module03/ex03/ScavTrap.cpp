@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 19:38:18 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/07 11:45:09 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/06 12:24:43 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 void ScavTrap::attack(const std::string& target)
 {
-	if(this->EnergyPoint > 0 && this->HitPoint)
+	if(this->EnergyPoint > 0)
 	{
-		std::cout << "ScavTrap " << Name << " attack cosing " << this->AttackDamage << " damage to " << target << std::endl;
+		std::cout << "ScavTrap " << Name << " attack cousing " << this->AttackDamage << " damage to " << target << std::endl;
 		this->EnergyPoint--;
 	}
 	else
@@ -26,7 +26,7 @@ void ScavTrap::attack(const std::string& target)
 
 void ScavTrap::guardGate()
 {
-	if(this->EnergyPoint > 0 && this->HitPoint)
+	if(this->EnergyPoint > 0)
 	{
 		std::cout << "ScavTrap " << Name << " is now in Gate keeper mode." << std::endl;
 		EnergyPoint--;
@@ -42,8 +42,8 @@ ScavTrap& ScavTrap::operator=(ScavTrap &Other)
 {
 	this->AttackDamage = Other.AttackDamage;
 	this->EnergyPoint = Other.EnergyPoint;
-	this->HitPoint = Other.HitPoint;
 	this->Name = Other.Name;
+	this->HitPoint = Other.HitPoint;
 	return (*this);
 }
 

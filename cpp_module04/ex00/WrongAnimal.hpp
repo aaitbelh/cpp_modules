@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/04 14:40:24 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/07 11:23:46 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/07 19:39:17 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/07 19:52:52 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-int main()
+#include <iostream>
+#include <string>
+
+class WrongAnimal
 {
-	ClapTrap Kira;
-	Kira.attack("L");
-	ClapTrap L;
-	L = Kira;
-	L.attack("missa");
-	ClapTrap Missa(L);
-}
+	protected:
+		std::string type;
+	public:
+		WrongAnimal();
+		WrongAnimal(WrongAnimal &Other);
+		WrongAnimal& operator=(WrongAnimal &Other);
+		~WrongAnimal();
+		void makeSound()const;
+		std::string getType()const;
+};
+
+#endif

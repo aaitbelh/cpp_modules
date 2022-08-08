@@ -1,12 +1,12 @@
 
-NAME = ClapTrap
+NAME = Animal
 
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp WrongAnimal.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
- CFLAGS = -Wall -Werror -Wextra -std=c++98
+ CFLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 
 
 all: $(NAME)

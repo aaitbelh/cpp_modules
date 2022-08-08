@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/04 14:40:24 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/07 11:23:46 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/04 19:38:13 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/07 10:31:06 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
+#include <iostream>
+#include <string>
 #include "ClapTrap.hpp"
 
-int main()
+class ScavTrap : virtual public ClapTrap
 {
-	ClapTrap Kira;
-	Kira.attack("L");
-	ClapTrap L;
-	L = Kira;
-	L.attack("missa");
-	ClapTrap Missa(L);
-}
+	public:
+	ScavTrap();
+	ScavTrap(std::string name);
+	ScavTrap(ScavTrap &Other);
+	ScavTrap& operator=(ScavTrap &Other);
+	void SetHitPoint(int hitpoint);
+	void attack(const std::string& target);
+	~ScavTrap();
+	void guardGate();
+};
+
+#endif

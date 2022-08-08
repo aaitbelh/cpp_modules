@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/04 14:40:24 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/07 11:23:46 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/07 17:41:54 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/07 19:54:16 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
 
-int main()
+#include "Animal.hpp"
+#include "WrongAnimal.hpp"
+
+class Dog : public Animal
 {
-	ClapTrap Kira;
-	Kira.attack("L");
-	ClapTrap L;
-	L = Kira;
-	L.attack("missa");
-	ClapTrap Missa(L);
-}
+	public:
+		Dog();
+		Dog(Dog &Other);
+		Dog& operator=(Dog &Other);
+		~Dog();
+		void makeSound()const;
+};
+
+#endif

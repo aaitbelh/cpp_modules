@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/04 14:40:24 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/07 11:23:46 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/06 09:55:49 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/07 14:23:41 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-int main()
+#include <iostream>
+#include <string>
+#include "ScavTrap.hpp"
+
+class FragTrap : virtual public ClapTrap
 {
-	ClapTrap Kira;
-	Kira.attack("L");
-	ClapTrap L;
-	L = Kira;
-	L.attack("missa");
-	ClapTrap Missa(L);
-}
+	public:
+		FragTrap();
+		FragTrap(std::string name);
+		FragTrap(FragTrap &Other);
+		FragTrap& operator=(FragTrap& Other);
+		~FragTrap();
+		void highFivesGuys(void);
+};
+
+#endif

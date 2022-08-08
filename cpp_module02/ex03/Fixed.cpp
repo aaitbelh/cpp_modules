@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:22:29 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/03 21:53:44 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/05 18:17:31 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ const Fixed& 	Fixed::max(Fixed const &a, Fixed const &b)
 }
 
 /******************operators overloading*************************/
-//postfix operator
+//postfix operator I
 Fixed	Fixed::operator++(int)
 {
 	Fixed tmpObject;
@@ -26,10 +26,27 @@ Fixed	Fixed::operator++(int)
 	return (tmpObject);
 }
 
-//prefeix operator
+//prefeix operator I
 Fixed&		Fixed::operator++()
 {
 	this->FpValue++;
+	return (*this);
+}
+
+//postfix operator D
+
+Fixed Fixed::operator--(int)
+{
+	Fixed tmpObject;
+	tmpObject.FpValue = this->FpValue;
+	this->FpValue--;
+	return (tmpObject);
+}
+
+//prefeix operator D
+Fixed&		Fixed::operator--()
+{
+	this->FpValue--;
 	return (*this);
 }
 

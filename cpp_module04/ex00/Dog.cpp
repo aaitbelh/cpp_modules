@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/04 14:40:24 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/07 11:23:46 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/07 17:43:14 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/07 19:51:57 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Dog.hpp"
 
-int main()
+void Dog::makeSound()const
 {
-	ClapTrap Kira;
-	Kira.attack("L");
-	ClapTrap L;
-	L = Kira;
-	L.attack("missa");
-	ClapTrap Missa(L);
+	std::cout << "Dog is Bark" << std::endl;
+}
+
+Dog::Dog()
+{
+	this->type = "Dog";
+	std::cout << "Dog Constructor Called" << std::endl;
+}
+
+Dog::Dog(Dog &Other)
+{
+	*this = Other;
+}
+
+Dog& Dog::operator=(Dog &Other)
+{
+	this->type = Other.type;
+	return *this;
+}
+
+Dog::~Dog()
+{
+	std::cout << "Dog Deconstructor Called" << std::endl;
 }

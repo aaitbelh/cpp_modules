@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:22:29 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/03 21:53:24 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/05 18:17:21 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,23 @@ Fixed	Fixed::operator++(int)
 Fixed&		Fixed::operator++()
 {
 	this->FpValue++;
+	return (*this);
+}
+
+//postfix operator D
+
+Fixed Fixed::operator--(int)
+{
+	Fixed tmpObject;
+	tmpObject.FpValue = this->FpValue;
+	this->FpValue--;
+	return (tmpObject);
+}
+
+//prefeix operator D
+Fixed&		Fixed::operator--()
+{
+	this->FpValue--;
 	return (*this);
 }
 

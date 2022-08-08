@@ -6,19 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 13:00:42 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/07 11:47:07 by aaitbelh         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/04 13:00:42 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/07 11:05:29 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/07 09:57:21 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +22,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		EnergyPoint--;
 	}
 	else
-		std::cout << "No energy Points" << std::endl;
+		std::cout << "No energy Point" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target)
@@ -46,7 +34,7 @@ void	ClapTrap::attack(const std::string& target)
 		this->EnergyPoint--;
 	}
 	else
-		std::cout << "No energy Points" << std::endl;
+		std::cout << "No energy Point" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -60,7 +48,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 			<< amount << " damage HitPoint now are " << this->HitPoint << " Points" << std::endl;
 	}
 	else
-		std::cout << "No energy Points" << std::endl;
+		std::cout << "No energy Point" << std::endl;
 }
 
 ClapTrap::ClapTrap()
@@ -70,7 +58,7 @@ ClapTrap::ClapTrap()
 	this->HitPoint = 0;
 	this->EnergyPoint = 10;
 	this->AttackDamage = 0;
-	std::cout << "constructor called" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -79,12 +67,12 @@ ClapTrap::ClapTrap(std::string name)
 	this->HitPoint = 0;
 	this->EnergyPoint = 10;
 	this->AttackDamage = 0;
-	std::cout << name << "constructor called" << std::endl;
+	std::cout << name << " ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "destructor called" << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 ClapTrap::ClapTrap(ClapTrap &Other)
 {
@@ -93,7 +81,7 @@ ClapTrap::ClapTrap(ClapTrap &Other)
 ClapTrap& ClapTrap::operator=(ClapTrap &Other)
 {
 	this->EnergyPoint = Other.EnergyPoint;
-	this->HitPoint = Other.HitPoint;
+	this->HitPoint = Other.EnergyPoint;
 	this->Name = Other.Name;
 	this->AttackDamage = Other.AttackDamage;
 	return (*this);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: casper <casper@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 13:00:42 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/04 11:13:04 by casper           ###   ########.fr       */
+/*   Updated: 2022/08/07 11:05:29 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if(this->EnergyPoint > 0)
+	if(this->EnergyPoint > 0 && this->HitPoint)
 	{
 		this->HitPoint += amount;
 		std::cout << this->Name << " repaired him self by " << amount
 			<< " and get " << this->HitPoint << std::endl;
-		this->HitPoint+=amount;
 		EnergyPoint--;
 	}
 	else
@@ -28,7 +27,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 
 void	ClapTrap::attack(const std::string& target)
 {
-	if(EnergyPoint > 0)
+	if(EnergyPoint > 0 && this->HitPoint)
 	{
 		std::cout << this->Name << " attacks " << target << ", causing "
 			<< this->AttackDamage << " points of damage!" << std::endl;
@@ -40,11 +39,11 @@ void	ClapTrap::attack(const std::string& target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if(this->EnergyPoint > 0)
+	if(this->EnergyPoint > 0 && this->HitPoint)
 	{
 		this->HitPoint -= amount;
-	if(this->HitPoint < 0)
-		this->HitPoint = 0;
+		if(this->HitPoint < 0)
+			this->HitPoint = 0;
 		std::cout << this->Name << " take a " 
 			<< amount << " damage HitPoint now are " << this->HitPoint << " Points" << std::endl;
 	}
@@ -59,7 +58,7 @@ ClapTrap::ClapTrap()
 	this->HitPoint = 0;
 	this->EnergyPoint = 10;
 	this->AttackDamage = 0;
-	std::cout << this->Name << " constructor called" << std::endl;
+	std::cout << "constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -68,7 +67,7 @@ ClapTrap::ClapTrap(std::string name)
 	this->HitPoint = 0;
 	this->EnergyPoint = 10;
 	this->AttackDamage = 0;
-	std::cout << name << " constructor called" << std::endl;
+	std::cout << name << "constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -82,7 +81,7 @@ ClapTrap::ClapTrap(ClapTrap &Other)
 ClapTrap& ClapTrap::operator=(ClapTrap &Other)
 {
 	this->EnergyPoint = Other.EnergyPoint;
-	this->HitPoint = Other.EnergyPoint;
+	this->HitPoint = Other.HitPoint;
 	this->Name = Other.Name;
 	this->AttackDamage = Other.AttackDamage;
 	return (*this);

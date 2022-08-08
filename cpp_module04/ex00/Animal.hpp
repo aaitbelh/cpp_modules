@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/04 14:40:24 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/07 11:23:46 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/07 17:22:32 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/07 19:56:52 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-int main()
+#include <iostream>
+#include <string>
+
+
+class Animal
 {
-	ClapTrap Kira;
-	Kira.attack("L");
-	ClapTrap L;
-	L = Kira;
-	L.attack("missa");
-	ClapTrap Missa(L);
-}
+	protected:
+		std::string type;
+	public:
+		Animal();
+		Animal(Animal &Other);
+		Animal& operator=(Animal &Other);
+		virtual ~Animal();
+		virtual void makeSound()const;
+		std::string getType()const;
+};
+
+#endif

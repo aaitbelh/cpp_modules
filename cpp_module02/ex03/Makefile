@@ -6,7 +6,7 @@ SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
- CFLAGS =  -std=c++98
+ CFLAGS =  -Wall -Werror -Wextra -std=c++98
 
 
 all: $(NAME)
