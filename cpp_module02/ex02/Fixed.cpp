@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:22:29 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/05 18:17:21 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/08 17:09:07 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ Fixed&		Fixed::operator--()
 Fixed	Fixed::operator/(Fixed const &c1)
 {
 	Fixed tmp;
-	tmp.FpValue = (this->FpValue / (float)c1.FpValue) * (1 << this->BitFractional);
+	tmp.FpValue = (this->FpValue / c1.FpValue) * (1 << this->BitFractional);
 	return (tmp);
 }
 Fixed	Fixed::operator*(Fixed const &c1)

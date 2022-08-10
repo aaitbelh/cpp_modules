@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:50:04 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/07 14:23:57 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/10 10:31:00 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,7 @@ DiamondTrap& DiamondTrap::operator=(DiamondTrap& Other)
 DiamondTrap::~DiamondTrap()
 {
 	std::cout << "DiamondTrap deconstructor called" << std::endl;
+	std::cout << this->EnergyPoint << std::endl;
+	std::cout << this->AttackDamage << std::endl;
+	std::cout << this->HitPoint << std::endl;
 }

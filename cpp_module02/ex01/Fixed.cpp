@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 19:31:21 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/01 14:32:53 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/08 17:00:08 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ Fixed::Fixed(const int value)
 	std::cout << "Int constructor called" << std::endl;
 	FpValue = value << this->BitFractional;
 }
+
 Fixed::Fixed(const float value)
 {
 	std::cout << "Float constructor called" << std::endl;
