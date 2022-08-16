@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 19:06:04 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/15 16:38:57 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/13 15:53:37 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/16 11:36:08 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Brain.hpp"
 
-std::string Animal::getType()const
+Brain::Brain()
 {
-	return (this->type);
+	std::cout << "Brain constructor called" << std::endl;
+	for(int i = 0; i < 100; i++)
+		this->ideas[i] = "NO IDEA";
 }
 
-Animal::Animal()
+Brain::Brain(Brain &Other)
 {
-	std::cout << "Animal consrtuctor called" << std::endl;
-}
-
-Animal::Animal(Animal &Other)
-{
+	std::cout << "Brain Copy constructor called" << std::endl;
 	*this = Other;
 }
-
-Animal& Animal::operator=(Animal &Other)
+Brain& Brain::operator=(Brain &Other)
 {
-	this->type = Other.type;
+	for(int i = 0; i < 100; i++)
+		this->ideas[i] = Other.ideas[i];
 	return (*this);
 }
-Animal::~Animal()
+
+Brain::~Brain()
 {
-	std::cout << "deconstructor callde" << std::endl;
-}
-void Animal::makeSound()const
-{
-	std::cout << "Wrong Sound from Wrong Animal" << std::endl;
+	std::cout << "Brain deconstructor called" << std::endl;
 }

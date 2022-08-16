@@ -1,11 +1,11 @@
 
-NAME = Animal
+NAME = Abstract
 
-SRCS = main.cpp Cat.cpp Dog.cpp Animal.cpp WrongAnimal.cpp
+SRCS = main.cpp Cat.cpp Dog.cpp Animal.cpp WrongAnimal.cpp Brain.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
- CFLAGS = -Wall -Werror -Wextra -std=c++98
+ CFLAGS = -Wall -Werror -Wextra  -std=c++98
 
 
 all: $(NAME)

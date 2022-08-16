@@ -1,42 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 19:06:04 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/15 16:38:57 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/12 15:32:56 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/15 14:50:15 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Dog.hpp"
 
-std::string Animal::getType()const
+Dog::Dog()
 {
-	return (this->type);
+	this->type = "Dog";
+	this->Brain = new class Brain();
+	std::cout << "Dog constructor called" << std::endl;
 }
 
-Animal::Animal()
+Dog::Dog(Dog &Other)
 {
-	std::cout << "Animal consrtuctor called" << std::endl;
-}
-
-Animal::Animal(Animal &Other)
-{
+	this->Brain = new class Brain();
 	*this = Other;
 }
 
-Animal& Animal::operator=(Animal &Other)
+Dog& Dog::operator=(Dog &Other)
 {
 	this->type = Other.type;
+	*this->Brain = *Other.Brain;
 	return (*this);
 }
-Animal::~Animal()
+
+Dog::~Dog()
 {
-	std::cout << "deconstructor callde" << std::endl;
+	delete Brain;
+	std::cout << "Dod deconstructor called" << std::endl;
 }
-void Animal::makeSound()const
+void Dog::makeSound()const
 {
-	std::cout << "Wrong Sound from Wrong Animal" << std::endl;
+	std::cout << "Dog can brak" << std::endl;
 }

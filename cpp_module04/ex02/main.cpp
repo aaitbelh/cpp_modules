@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:55:51 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/12 17:25:55 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/16 11:35:13 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,21 @@
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
 
-
+void f()
+{
+	Animal *d[20];
+	for(int i = 0; i < 10; i++)
+	{
+		if(i < 5)
+			d[i] = new Dog();
+		else
+			d[i] = new Cat();
+	}
+	// for(int i = 0; i < 10; i++)
+	// 	delete d[i];
+}
 int main()
 {
-	{	const Animal* meta = new Animal();
-		const Animal* j = new Dog();
-		const Animal* i = new Cat();
-		std::cout << j->getType() << " " << std::endl;
-		std::cout << i->getType() << " " << std::endl;
-		i->makeSound(); //will output the cat sound!
-		j->makeSound();
-		meta->makeSound();
-	}
-	// {	const WrongAnimal* meta = new WrongAnimal();
-	// 	const WrongAnimal* j = new Dog();
-	// 	const WrongAnimal* i = new Cat();
-	// 	std::cout << j->getType() << " " << std::endl;
-	// 	std::cout << i->getType() << " " << std::endl;
-	// 	i->makeSound(); //will output the cat sound!
-	// 	j->makeSound();
-	// 	meta->makeSound();
-	// }
-return 0;
+	f();
+	system("leaks Abstract");
 }

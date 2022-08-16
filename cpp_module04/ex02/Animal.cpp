@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:55:55 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/16 10:58:04 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/11 19:06:04 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/16 11:23:58 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#include "Animal.hpp"
 
-#include <iostream>
-#include <string>
-
-class Animal
+std::string Animal::getType()const
 {
-	protected:
-		std::string type;
-	public:
-		Animal();
-		Animal(Animal &Other);
-		Animal& operator=(Animal &Other);
-		~Animal();
-		virtual void makeSound()const;
-		std::string getType()const;
-};
+	return (this->type);
+}
 
-#endif
+Animal::Animal()
+{
+	std::cout << "Animal consrtuctor called" << std::endl;
+}
+
+Animal::Animal(Animal &Other)
+{
+	*this = Other;
+}
+
+Animal& Animal::operator=(Animal &Other)
+{
+	this->type = Other.type;
+	return (*this);
+}
+Animal::~Animal()
+{
+	std::cout << "Animal deconstructor called" << std::endl;
+}

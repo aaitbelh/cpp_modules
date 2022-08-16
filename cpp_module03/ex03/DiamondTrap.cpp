@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:50:04 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/10 10:31:00 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/12 16:37:13 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ void DiamondTrap::whoAmI()
 
 DiamondTrap::DiamondTrap()
 {
-	this->HitPoint = FragTrap::HitPoint;
-	this->EnergyPoint = ScavTrap::EnergyPoint;
-	this->AttackDamage =  FragTrap::AttackDamage;
+	this->HitPoint = 100;
+	this->EnergyPoint = 50;
+	this->AttackDamage = 30;
 	std::cout << "DioamondTrap constuctor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), name(name)
 {
-	this->HitPoint = FragTrap::HitPoint;
-	this->EnergyPoint = ScavTrap::EnergyPoint;
-	this->AttackDamage =  FragTrap::AttackDamage;
+	this->HitPoint = 100;
+	this->EnergyPoint = 50;
+	this->AttackDamage = 30;
 	std::cout << "DiamondTrap " << this->name <<  " constructor called" << std::endl;
 }
 
@@ -56,7 +56,4 @@ DiamondTrap& DiamondTrap::operator=(DiamondTrap& Other)
 DiamondTrap::~DiamondTrap()
 {
 	std::cout << "DiamondTrap deconstructor called" << std::endl;
-	std::cout << this->EnergyPoint << std::endl;
-	std::cout << this->AttackDamage << std::endl;
-	std::cout << this->HitPoint << std::endl;
 }

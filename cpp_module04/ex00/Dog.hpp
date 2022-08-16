@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/07 17:41:54 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/07 19:54:16 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/12 15:32:59 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/15 16:38:19 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Dog : public Animal
 {
 	public:
 		Dog();
-		Dog(Dog &Other);
+		Dog(Dog& Other);
 		Dog& operator=(Dog &Other);
 		~Dog();
 		void makeSound()const;

@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 13:00:42 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/07 11:05:29 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/10 19:00:53 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ ClapTrap::ClapTrap(std::string name)
 	this->HitPoint = 0;
 	this->EnergyPoint = 10;
 	this->AttackDamage = 0;
-	std::cout << name << "constructor called" << std::endl;
+	std::cout << name << " constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
