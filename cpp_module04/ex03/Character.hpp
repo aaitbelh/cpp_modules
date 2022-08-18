@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:55:55 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/16 18:29:05 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/16 19:02:46 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/18 16:23:03 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
-#include <iostream>
-#include <string>
+#include "AMateria.hpp"
 
-class Animal
+class Character : public ICharacter
 {
-	protected:
-		std::string type;
+	private:
+		std::string name;
+		AMateria  *OwnMateria[4];
+		int size;
 	public:
-		Animal();
-		Animal(Animal &Other);
-		Animal& operator=(Animal &Other);
-		virtual ~Animal();
-		virtual void makeSound()const = 0;
-		std::string getType()const;
+		Character();
+		Characte(std::string name);
+		Character(Character &Other);
+		Character& operator=(Character &Other);	
+		clear();
+		std::string const & getName();
+		void equip(AMateria* m);
+		void unequip(int idx);
+		~Character();		
 };
 
 #endif

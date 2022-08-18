@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/16 17:40:50 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/18 16:12:25 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/18 09:33:19 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/18 14:57:52 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "Ice.hpp"
 
-AMateria::AMateria(){
-	
+Ice::Ice():AMateria("ice"){
 }
-
-AMateria::AMateria(std::string const& type):type(type){
-}
-AMateria::AMateria(AMateria &Other)
+Ice::Ice(Ice &Other)
 {
 	*this = Other;
 }
-
-AMateria& AMateria::operator=(AMateria &Other)
+AMateria* Ice::clone()const
+{
+	return (new Ice());
+}
+Ice& Ice::operator=(Ice &Other)
 {
 	this->type = Other.type;
+	return *this;
 }
-
-AMateria::~AMateria(){
+Ice::~Ice(){
+	
 }
-
-void AMateria::settype(std::string const &type)
+void Ice::use(ICharacter& target)
 {
-	this->type = type;
-}
-const std::string& AMateria::getType() const
-{
-	return (this->type);
+	std::cout << "shoots an ice bolt at " << target.getname();
 }

@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:55:51 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/16 19:00:32 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/16 18:04:15 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/18 16:24:52 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
+#ifndef ICE_HPP
+#define ICE_HPP
 
-void f()
-{
-	Animal *d[20];
-	for(int i = 0; i < 10; i++)
-	{
-		if(i < 5)
-			d[i] = new Dog();
-		else
-			d[i] = new Cat();
-	}
-	for(int i = 0; i < 10; i++)
-		delete d[i];
-}
+#include "AMateria.hpp"
 
-int main()
+class Ice : public AMateria
 {
-	f();
-	system("leaks Abstract");
-}
+	public:
+		Ice();
+		Ice(Ice &Other);
+		Ice& operator=(Ice &Other);
+		~Ice();
+		AMateria* clone()const;
+		void use(ICharacter& target);
+};
+
+#endif
