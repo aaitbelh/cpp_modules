@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 09:33:19 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/18 14:57:52 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/18 19:59:35 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ Ice::~Ice(){
 }
 void Ice::use(ICharacter& target)
 {
-	std::cout << "shoots an ice bolt at " << target.getname();
+	std::cout << "shoots an ice bolt at " << target.getName() << std::endl;;
 }

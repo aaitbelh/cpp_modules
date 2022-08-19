@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 16:58:28 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/18 14:02:01 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/18 20:40:19 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 
 #include "AMateria.hpp"
 
-class Ice : public AMateria
+class Cure : public AMateria
 {
 	public:
-		Ice(const std::string& type);
-		Ice(Ice &Other);
-		Ice& operator=(Ice &Other);
-		~Ice();
+		Cure();
+		Cure(const std::string& type);
+		Cure(Cure &Other);
+		Cure& operator=(Cure &Other);
+		void use(ICharacter &target);
+		~Cure();
 		AMateria* clone()const;
 };
 
