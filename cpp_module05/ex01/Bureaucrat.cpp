@@ -6,11 +6,25 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 14:22:28 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/22 15:47:04 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/22 18:48:33 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+void Bureaucrat::signForm(Form &form)
+{
+	if(getGrade() <= form.getGrade())
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+	else
+	{
+		std::cout << this->getName() << " couldn’t sign " << form.getName() << " because ";
+		if(this->getGrade() > form.getGrade())
+			std::cout << "Grade is too Low" << std::endl;
+		else if(this->getGrade() < 1)
+			std::cout << "Grade is too High" << std::endl;
+	}
+}
 
 const char* GradeTooLowException::what() const throw()
 {
