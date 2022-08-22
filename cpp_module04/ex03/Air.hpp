@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Air.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:55:55 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/20 15:22:18 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/20 10:50:28 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/20 11:02:26 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef AIR_HPP
+#define AIR_HPP
 
-#include <iostream>
-#include <string>
+#include "AMateria.hpp"
 
-class Animal
+class Air : public AMateria
 {
-	protected:
-		std::string type;
 	public:
-		Animal();
-		Animal(Animal &Other);
-		Animal& operator=(Animal &Other);
-		virtual ~Animal();
-		virtual void makeSound()const;
-		std::string getType()const;
+		Air();
+		Air(Air &Other);
+		Air& operator=(Air &Other);
+		AMateria *clone()const;
+		void use(ICharacter& target);
+		~Air();
 };
 
 #endif

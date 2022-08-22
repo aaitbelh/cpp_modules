@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 17:40:50 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/18 19:59:12 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/20 12:56:29 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 void AMateria::use(ICharacter& target)
 {
 	(void)target;
+	std::cout << "it havent any power to use" << std::endl;
 }
 
 AMateria::AMateria():type("NULL"){

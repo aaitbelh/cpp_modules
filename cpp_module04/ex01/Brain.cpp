@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:53:37 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/16 11:36:08 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/20 14:41:46 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ Brain& Brain::operator=(Brain &Other)
 
 Brain::~Brain()
 {
-	std::cout << "Brain deconstructor called" << std::endl;
+	std::cout << "Brain destructor called" << std::endl;
 }

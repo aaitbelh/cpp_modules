@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 18:55:51 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/12 17:25:55 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/20 14:42:53 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main()
 	// 	const WrongAnimal* i = new Cat();
 	// 	std::cout << j->getType() << " " << std::endl;
 	// 	std::cout << i->getType() << " " << std::endl;
-	// 	i->makeSound(); //will output the cat sound!
+	// 	i->makeSound(); //will output the wrong sound!
 	// 	j->makeSound();
 	// 	meta->makeSound();
 	// }

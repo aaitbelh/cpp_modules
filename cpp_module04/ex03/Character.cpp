@@ -6,13 +6,11 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 15:29:48 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/19 21:58:46 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/20 13:10:02 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
 
 
 void Character::addNewMemory(AMateria *ptr)
@@ -62,7 +60,7 @@ void Character::equip(AMateria* m)
 {
 	if(size < 4)
 	{
-		for(int i = 0; i < size; i++)
+		for(int i = 0; i < 4; i++)
 		{
 			if(!OwnMateria[i])
 			{
@@ -76,7 +74,7 @@ void Character::equip(AMateria* m)
 }
 void Character::unequip(int idx)
 {
-	if((idx >= 0 && idx < size) && OwnMateria[idx])
+	if(idx >= 0 && OwnMateria[idx])
 	{
 		addNewMemory(OwnMateria[idx]);
 		OwnMateria[idx] = NULL;
@@ -85,11 +83,22 @@ void Character::unequip(int idx)
 }
 void Character::clear_all(void)
 {
-	std::cout << this->size << std::endl;
-	for(int i= 0; i < this->size; i++)
+	t_lst *tmp;
+	tmp = HeadOfMemory; 
+	for(int i= 0; i < 4 ; i++)
 	{
+		tmp = HeadOfMemory;
 		if(OwnMateria[i])
-			delete OwnMateria[i];
+		{
+			while(tmp)
+			{
+				if(tmp->ptr == OwnMateria[i])
+					break;
+				tmp = tmp->next;
+			}
+			if(!tmp)
+				delete OwnMateria[i];
+		}
 	}
 	this->size = 0;
 }
@@ -105,18 +114,20 @@ Character& Character::operator=(Character &Other)
 }
 void	Character::use(int idx, ICharacter& target)
 {
-	if(idx >= 0 && idx < size)
+	if(OwnMateria[idx] && (idx >= 0 && idx < 4))
 	{
-		std::cout << this->OwnMateria[idx]->getType() << std::endl;
 		this->OwnMateria[idx]->use(target);
 	}
 }
 
 Character::~Character() {
 	clear_all();
+	t_lst *tmp;
 	while(HeadOfMemory)
 	{
+		delete HeadOfMemory->ptr;
+		tmp = HeadOfMemory;
 		HeadOfMemory = HeadOfMemory->next;
-		delete HeadOfMemory->ptr;;
+		delete tmp;
 	}
 }

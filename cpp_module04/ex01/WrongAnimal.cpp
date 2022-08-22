@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 17:15:29 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/12 17:23:14 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/20 14:42:18 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ WrongAnimal& WrongAnimal::operator=(WrongAnimal& Other)
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "WrongAnimal deconstructor callde" << std::endl;
+	std::cout << "WrongAnimal destructor callde" << std::endl;
 }
 
 void WrongAnimal::makeSound()const

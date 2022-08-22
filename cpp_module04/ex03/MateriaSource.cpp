@@ -6,13 +6,11 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 16:25:23 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/19 19:01:40 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/20 11:04:06 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
 
 MateriaSource::MateriaSource()
 {
@@ -45,7 +43,6 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 	{
 		if(Materiasrc[i]->getType() == type)
 		{
-			std::cout << "type == " << type << std::endl;
 			return(Materiasrc[i]->clone());
 		}
 	}

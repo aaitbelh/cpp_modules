@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 19:06:04 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/15 09:03:32 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/20 14:41:38 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Animal& Animal::operator=(Animal &Other)
 }
 Animal::~Animal()
 {
-	std::cout << "Animal deconstructor called" << std::endl;
+	std::cout << "Animal destructor called" << std::endl;
 }
 void Animal::makeSound()const
 {

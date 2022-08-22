@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:32:56 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/15 14:50:15 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/20 14:41:16 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Dog& Dog::operator=(Dog &Other)
 Dog::~Dog()
 {
 	delete Brain;
-	std::cout << "Dod deconstructor called" << std::endl;
+	std::cout << "Dod destructor called" << std::endl;
 }
 void Dog::makeSound()const
 {

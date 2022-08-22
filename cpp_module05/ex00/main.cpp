@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 18:55:55 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/20 15:22:18 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/21 11:35:24 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/22 14:36:45 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
-
 #include <iostream>
-#include <string>
+#include "Bureaucrat.hpp"
 
-class Animal
+int main()
 {
-	protected:
-		std::string type;
-	public:
-		Animal();
-		Animal(Animal &Other);
-		Animal& operator=(Animal &Other);
-		virtual ~Animal();
-		virtual void makeSound()const;
-		std::string getType()const;
-};
-
-#endif
+	
+	try
+	{
+		Bureaucrat b("Mamella", 150);
+		std::cout << b.getName() << std::endl;
+		std::cout << b << std::endl;
+		std::cout << b << std::endl;
+		b.Decrement();
+		std::cout << b << std::endl;
+	}
+	catch(std::exception &e)
+	{
+		std::cout <<e.what() << std::endl;
+	}
+}

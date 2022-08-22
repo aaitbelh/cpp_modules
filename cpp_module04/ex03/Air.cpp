@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.cpp                                           :+:      :+:    :+:   */
+/*   Air.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/19 21:46:16 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/19 21:53:22 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/20 10:52:43 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/20 11:06:09 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-int main()
+#include "Air.hpp"
+Air::Air():AMateria("air")
 {
-	char *ptr[4];
-	char str[10] = "HELLO";
-	str[5] = 0;
-	ptr[1] = &str[0]; 
-	for(int i =0 ; i < 4; i++)
-	{
-		if(!ptr[i])
-			std::cout << "null" << std::endl;
-		else
-			std::cout << ptr[i] << std::endl;
-	}
+}
+
+Air::Air(Air &Other)
+{
+	*this = Other;
+}
+Air& Air::operator=(Air &Other)
+{
+	this->type = Other.getType();
+	return *this;
+}
+void Air::use(ICharacter &target){
+	std::cout << target.getName() << " use the power of the air" << std::endl;
+}
+AMateria* Air::clone()const
+{
+	return (new Air());
+}
+Air::~Air()
+{
+	
 }
