@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 11:35:24 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/22 18:51:51 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:10:06 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,4 @@ int main()
 		std::cout <<e.what() << std::endl;
 	}
 }
+/// i edit in this exercice without check, check it later

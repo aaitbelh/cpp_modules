@@ -6,29 +6,31 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 11:35:24 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/22 18:51:51 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/23 21:16:55 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
-#include "Bureaucrat.hpp"
+# include  <exception> 
+# include  <iostream>
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+
 int main()
 {
-	
-	try
-	{
-		Form test1("KIRA", 150, 0);
-		Form test2("KIRA", 1, 0);
-		Form b("Mamella", 150, 0);
-		Bureaucrat a("grboz", 1);
-		b.beSigned(a);
-		std::cout << b.getSigne() << std::endl;
-		a.signForm(b);
+
+	try{	
+		RobotomyRequestForm a("NATSU");
+		ShrubberyCreationForm l("mamella");
+		l.setGrade(120);
+		std::cout << l.getGrade() << std::endl;
+		ShrubberyCreationForm l2(l);
+		std::cout << l2.getGrade() << std::endl;
+		
+		Bureaucrat b("SOMEONE", 1);
+		l.execute(b);
 	}
 	catch(std::exception &e)
 	{
-		std::cout <<e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 }

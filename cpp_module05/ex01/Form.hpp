@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 14:54:47 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/22 18:33:25 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/23 15:14:42 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,4 @@ class Form
 		~Form();	
 };
 
-std::ostream& operator<<(std::ostream& out, Form form);
 #endif

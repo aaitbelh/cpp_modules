@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 14:54:47 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/22 18:33:25 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/23 21:04:25 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Form
 		std::string const name;
 		bool signe;
 		int const Grade;
-		int const execute;
+		int const Execute;
 	public:
 		class GradeTooHighExceptions GradeTooHighExceptions;
 		class GradeTooLowExceptions GradeTooLowExceptions;
@@ -48,8 +48,10 @@ class Form
 		Form(Form &Other);
 		void beSigned(Bureaucrat &Bureaucrat);
 		Form& operator=(Form &Other);
-		~Form();	
+		void setGrade(int Grade);
+		virtual void execute(Bureaucrat const & executor)const = 0;
+		virtual ~Form();	
 };
 
-std::ostream& operator<<(std::ostream& out, Form form);
+std::ostream& operator<<(std::ostream& out, Form& form);
 #endif

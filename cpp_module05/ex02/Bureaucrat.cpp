@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 14:22:28 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/22 18:48:33 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/23 18:16:07 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ std::string const Bureaucrat::getName()
 	return (this->name);
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade()const
 {
 	return (this->Grade);
 }
@@ -67,7 +67,9 @@ Bureaucrat::Bureaucrat():name("NONAME_SET"), Grade(0){
 
 Bureaucrat::Bureaucrat(std::string const name, int Grade):name(name), Grade(Grade){	
 	if(Grade < 1)
+	{
 		throw(this->GradeTooHighException);
+	}
 	if(Grade > 150)
 		throw(this->GradeTooLowException);
 }

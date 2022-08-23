@@ -6,13 +6,17 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 15:06:08 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/22 18:47:33 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/23 21:16:06 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-std::ostream& operator<<(std::ostream& out, Form form)
+void Form::setGrade(int Grade)
+{
+	const_cast<int&>(this->Grade) = Grade;
+}
+std::ostream& operator<<(std::ostream& out, Form& form)
 {
 	out << form.getName() << " form, " << form.getGrade()
 	 << " Form Grad" << form.getExec() << " Form execute" << "Signed:" 
@@ -30,29 +34,30 @@ const char* GradeTooHighExceptions::what() const throw()
 	return ("Grade too High");
 }
 
-Form::Form():name("NOTSET"),signe(0),Grade(0),execute(0){
+Form::Form():name("NOTSET"),signe(0),Grade(0),Execute(0){
 	if(Grade < 1)
 		throw(GradeTooHighExceptions);
 	if(Grade > 150)
 		throw(GradeTooLowExceptions);
 }
 Form::Form(std::string name, int Grade, int execute)
-:name(name),signe(0),Grade(Grade),execute(execute){
+:name(name),signe(0),Grade(Grade),Execute(execute){
 	if(Grade < 1)
 		throw(GradeTooHighExceptions);
 	if(Grade > 150)
 		throw(GradeTooLowExceptions);
 }
 
-Form::Form(Form &Other):Grade(0),execute(0)
+Form::Form(Form &Other):Grade(0),Execute(0)
 {
 	*this = Other;
 }
 Form& Form::operator=(Form& Other)
 {	
 	*(const_cast<int*>(&Grade)) = Other.getGrade();
+	const_cast<std::string&>(name) = Other.getName();
 	this->signe = Other.getSigne();
-	*(const_cast<int*>(&execute)) = Other.getExec();
+	*(const_cast<int*>(&Execute)) = Other.getExec();
 	return *this;
 }
 
@@ -61,7 +66,7 @@ int Form::getSigne()const{
 }
 int Form::getExec()const 
 {
-	return this->execute;
+	return this->Execute;
 }
 int Form::getGrade()const{
 	return this->Grade;

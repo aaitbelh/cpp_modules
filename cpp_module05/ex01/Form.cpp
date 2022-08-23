@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 15:06:08 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/22 18:47:33 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:06:41 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ void Form::beSigned(Bureaucrat &Bureaucrat)
 {
 	if(Bureaucrat.getGrade() <= this->getGrade())
 		this->signe = 1;
+	else
+		throw(Form::GradeTooLowExceptions);
 }
 Form::~Form()
 {
