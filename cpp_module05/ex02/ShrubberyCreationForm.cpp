@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 19:02:16 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/23 19:55:08 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/23 23:20:03 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,14 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target):Form(target,145
 	
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &Other)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &Other):Form(Other.target,145, 137)
 {
+	std::cout << "MOK" << std::endl;
 	*this = Other;
 }
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm &Other)
 {
+	std::cout << "MAMAK" << std::endl;
 	this->target = Other.target;
 	this->Form::operator=(Other);
 	return (*this);

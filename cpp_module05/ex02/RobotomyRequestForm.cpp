@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 15:57:50 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/23 18:57:30 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/23 23:17:31 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &Other)
 RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm &Other)
 {
 	this->target = Other.target;
-	Form::operator=(Other);
+	this->Form::operator=(Other);
 	return *this;
 }
 
