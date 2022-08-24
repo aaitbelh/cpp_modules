@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: casper <casper@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 15:57:50 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/23 23:17:31 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/24 12:15:49 by casper           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target):Form(target,72, 45)
 {	
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &Other)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &Other):Form("__NONAMESET",72, 45)
 {
 	*this = Other;
 }
@@ -33,6 +33,8 @@ RobotomyRequestForm::~RobotomyRequestForm(){
 }
 void RobotomyRequestForm::execute(Bureaucrat const & executor)const
 {
+	if(this->getSigne() != 1)
+		throw (FormNotSigned);
 	if(executor.getGrade() <= 72 && executor.getGrade() <= 45)
 	{
 		srand(time(0));

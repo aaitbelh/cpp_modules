@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: casper <casper@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 19:02:16 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/24 10:31:04 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/24 12:22:34 by casper           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,14 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 }
 void ShrubberyCreationForm::execute(Bureaucrat const & executor)const
 {
+
+	if(this->getSigne() != 1)
+		throw(this->FormNotSigned);
 	if(executor.getGrade() <= getGrade() && executor.getGrade() <= getExec())
 	{
 		
-		std::ofstream outfile (target + "_shrubbery");
+		std::string nameOfFile = target + "_shrubbery";
+		std::ofstream outfile (nameOfFile.c_str());
 		outfile << "       _-_       \n";
 		outfile <<"    /~~   ~~\\    \n";
 		outfile <<" /~~         ~~\\ \n";

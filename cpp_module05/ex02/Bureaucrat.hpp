@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: casper <casper@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 11:35:26 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/23 17:44:51 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/24 10:39:20 by casper           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ class Bureaucrat
 		~Bureaucrat();
 		std::string const getName();
 		int getGrade()const;
+		void executeForm(Form const & form);
 };
 
 std::ostream & operator<<(std::ostream &out, Bureaucrat bureaucrat);

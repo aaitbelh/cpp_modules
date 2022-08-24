@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: casper <casper@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 14:54:47 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/23 21:04:25 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/24 12:12:25 by casper           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,13 @@ class GradeTooLowExceptions : public std::exception
 		const char* what() const throw();
 };
 
+
+class FormNotSigned : public std::exception
+{
+	public:
+		const char *what() const throw();
+};
+
 class Form
 {
 	private:
@@ -39,6 +46,7 @@ class Form
 	public:
 		class GradeTooHighExceptions GradeTooHighExceptions;
 		class GradeTooLowExceptions GradeTooLowExceptions;
+		class FormNotSigned FormNotSigned;
 		Form();
 		Form(std::string name, int Grade, int execute);
 		std::string const getName()const;
@@ -46,7 +54,7 @@ class Form
 		int getGrade()const;
 		int getExec()const;
 		Form(Form &Other);
-		void beSigned(Bureaucrat &Bureaucrat);
+		void beSigned(Bureaucrat Bureaucrat);
 		Form& operator=(Form &Other);
 		void setGrade(int Grade);
 		virtual void execute(Bureaucrat const & executor)const = 0;

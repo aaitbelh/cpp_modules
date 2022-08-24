@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+         #
+#    By: casper <casper@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/21 14:31:23 by aaitbelh          #+#    #+#              #
-#    Updated: 2022/08/24 11:06:25 by aaitbelh         ###   ########.fr        #
+#    Updated: 2022/08/24 10:20:56 by casper           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = main.cpp Bureaucrat.cpp Form.cpp RobotomyRequestForm.cpp ShrubberyCreation
 
 OBJS = $(SRC:.cpp=.o)
 
-CC = c++
+CC = clang++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98 
 

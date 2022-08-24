@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: casper <casper@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 15:06:08 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/24 11:09:07 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/24 12:14:13 by casper           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
+const char* FormNotSigned::what()const throw()
+{
+	return ("FORM NOT SIGNED :)");
+}
 void Form::setGrade(int Grade)
 {
 	const_cast<int&>(this->Grade) = Grade;
@@ -76,10 +80,12 @@ std::string const Form::getName()const
 	return (this->name);
 }
 
-void Form::beSigned(Bureaucrat &Bureaucrat)
+void Form::beSigned(Bureaucrat Bureaucrat)
 {
 	if(Bureaucrat.getGrade() <= this->getGrade())
 		this->signe = 1;
+	else
+		throw (this->GradeTooLowExceptions);
 }
 Form::~Form()
 {

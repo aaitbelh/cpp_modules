@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: casper <casper@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 11:35:24 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/24 14:04:53 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/24 12:17:25 by casper           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@ int main()
 {
 
 	try{	
-		Bureaucrat NIR("NIR", 2);
+		Bureaucrat NIR("NIR", 1);
 		PresidentialPardonForm KIRA("KIRA");
-		NIR.signForm(KIRA);
+		// NIR.signForm(KIRA);
+		std::cout << KIRA.getSigne() << std::endl;
+		KIRA.execute(NIR);
+		NIR.executeForm(KIRA);
 		std::cout << KIRA.getGrade() << std::endl;
-		KIRA.setGrade(2);
 		std::cout << KIRA.getGrade() << std::endl;
 		PresidentialPardonForm L("L");
 		std::cout << L.getName() << std::endl;
