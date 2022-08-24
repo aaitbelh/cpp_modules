@@ -6,13 +6,13 @@
 #    By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/21 14:31:23 by aaitbelh          #+#    #+#              #
-#    Updated: 2022/08/23 19:17:04 by aaitbelh         ###   ########.fr        #
+#    Updated: 2022/08/24 11:06:25 by aaitbelh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Bureaucrat
 
-SRC = main.cpp Bureaucrat.cpp Form.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp
 
 OBJS = $(SRC:.cpp=.o)
 

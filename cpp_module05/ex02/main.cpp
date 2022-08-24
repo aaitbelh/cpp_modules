@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 11:35:24 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/23 23:17:05 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/24 14:04:53 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,25 @@
 # include  <iostream>
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
 
 	try{	
-		RobotomyRequestForm a("NATSU");
-		ShrubberyCreationForm l("mamella");
-		l.setGrade(120);
-		std::cout << l.getGrade() << std::endl;
-		ShrubberyCreationForm l2(l);
-		l2 = l;
-		std::cout << l2.getGrade() << std::endl;
-		Bureaucrat b("SOMEONE", 1);
-		l.execute(b);
+		Bureaucrat NIR("NIR", 2);
+		PresidentialPardonForm KIRA("KIRA");
+		NIR.signForm(KIRA);
+		std::cout << KIRA.getGrade() << std::endl;
+		KIRA.setGrade(2);
+		std::cout << KIRA.getGrade() << std::endl;
+		PresidentialPardonForm L("L");
+		std::cout << L.getName() << std::endl;
+		L = KIRA;
+		std::cout << L.getGrade() << std::endl;
+		std::cout << L.getName() << std::endl;
+		L.execute(NIR);
+		std::cout << "-----------------------" << std::endl;
 	}
 	catch(std::exception &e)
 	{

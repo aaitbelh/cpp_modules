@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 15:06:08 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/23 23:11:24 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/24 11:09:07 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ Form::Form(Form &Other):Grade(0),Execute(0)
 }
 Form& Form::operator=(Form& Other)
 {	
-	std::cout << "POP" << std::endl;
 	*(const_cast<int*>(&Grade)) = Other.getGrade();
 	const_cast<std::string&>(name) = Other.getName();
 	this->signe = Other.getSigne();
