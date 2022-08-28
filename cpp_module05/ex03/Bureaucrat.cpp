@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 14:22:28 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/25 19:00:56 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/26 10:34:29 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,9 @@ Bureaucrat::Bureaucrat(Bureaucrat &Other)
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat &Other)
 {
+	std::string *tmp;
+	tmp = const_cast<std::string*>(&name);
+	*tmp = Other.getName();
 	this->Grade = Other.getGrade();
 	return (*this);
 }

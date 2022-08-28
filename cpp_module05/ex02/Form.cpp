@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: casper <casper@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 15:06:08 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/24 12:14:13 by casper           ###   ########.fr       */
+/*   Updated: 2022/08/25 19:23:35 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@ const char* FormNotSigned::what()const throw()
 {
 	return ("FORM NOT SIGNED :)");
 }
-void Form::setGrade(int Grade)
-{
-	const_cast<int&>(this->Grade) = Grade;
-}
+
 std::ostream& operator<<(std::ostream& out, Form& form)
 {
 	out << form.getName() << " form, " << form.getGrade()
@@ -38,11 +35,7 @@ const char* GradeTooHighExceptions::what() const throw()
 	return ("Grade too High");
 }
 
-Form::Form():name("NOTSET"),signe(0),Grade(0),Execute(0){
-	if(Grade < 1)
-		throw(GradeTooHighExceptions);
-	if(Grade > 150)
-		throw(GradeTooLowExceptions);
+Form::Form():name("NONAMESET"),signe(0),Grade(150),Execute(150){
 }
 Form::Form(std::string name, int Grade, int execute)
 :name(name),signe(0),Grade(Grade),Execute(execute){
@@ -52,16 +45,13 @@ Form::Form(std::string name, int Grade, int execute)
 		throw(GradeTooLowExceptions);
 }
 
-Form::Form(Form &Other):Grade(0),Execute(0)
+Form::Form(Form &Other):name("NONAMESET"),signe(0),Grade(150),Execute(150)
 {
 	*this = Other;
 }
 Form& Form::operator=(Form& Other)
 {	
-	*(const_cast<int*>(&Grade)) = Other.getGrade();
-	const_cast<std::string&>(name) = Other.getName();
 	this->signe = Other.getSigne();
-	*(const_cast<int*>(&Execute)) = Other.getExec();
 	return *this;
 }
 

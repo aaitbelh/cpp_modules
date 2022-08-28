@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: casper <casper@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 11:35:24 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/24 12:17:25 by casper           ###   ########.fr       */
+/*   Updated: 2022/08/25 19:30:34 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,25 @@ int main()
 {
 
 	try{	
-		Bureaucrat NIR("NIR", 1);
-		PresidentialPardonForm KIRA("KIRA");
-		// NIR.signForm(KIRA);
-		std::cout << KIRA.getSigne() << std::endl;
-		KIRA.execute(NIR);
-		NIR.executeForm(KIRA);
-		std::cout << KIRA.getGrade() << std::endl;
-		std::cout << KIRA.getGrade() << std::endl;
-		PresidentialPardonForm L("L");
-		std::cout << L.getName() << std::endl;
-		L = KIRA;
-		std::cout << L.getGrade() << std::endl;
-		std::cout << L.getName() << std::endl;
-		L.execute(NIR);
-		std::cout << "-----------------------" << std::endl;
+		Bureaucrat NIR("NIR", 7);
+		// PresidentialPardonForm KIRA("KIRA");
+		// NIR.signForm(KIRA); 
+		// KIRA.beSigned(NIR);
+		// NIR.executeForm(KIRA);
+		// KIRA.execute(NIR);
+		// std::cout << "-----------------------" << std::endl;
+		// ShrubberyCreationForm SBA("SBA");
+		// NIR.signForm(SBA);
+		// SBA.beSigned(NIR);
+		// SBA.execute(NIR);
+		// NIR.executeForm(SBA);
+		// std::cout << "-----------------------" << std::endl;
+		RobotomyRequestForm Anthony("Anthony");
+		NIR.signForm(Anthony);
+		Anthony.beSigned(NIR);
+		Anthony.execute(NIR);
+		NIR.executeForm(Anthony);
+		
 	}
 	catch(std::exception &e)
 	{

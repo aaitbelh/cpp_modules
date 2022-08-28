@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: casper <casper@student.42.fr>              +#+  +:+       +#+         #
+#    By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/21 14:31:23 by aaitbelh          #+#    #+#              #
-#    Updated: 2022/08/24 10:20:56 by casper           ###   ########.fr        #
+#    Updated: 2022/08/24 18:20:33 by aaitbelh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
+NAME = a.out
 
 SRC = main.cpp Bureaucrat.cpp Form.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp
 

@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 11:35:26 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/22 18:03:02 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:56:44 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ class Bureaucrat
 		Bureaucrat& operator=(Bureaucrat &Other);
 		void Increment();
 		void Decrement();
-		void signForm(Form& form);
+		void signForm(Form & form);
 		~Bureaucrat();
 		std::string const getName();
-		int getGrade();
+		int getGrade()const;
 };
 
-std::ostream & operator<<(std::ostream &out, Bureaucrat bureaucrat);
+std::ostream & operator<<(std::ostream &out, Bureaucrat &bureaucrat);
 
 #endif 

@@ -5,20 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/21 14:31:23 by aaitbelh          #+#    #+#              #
-#    Updated: 2022/08/24 18:18:57 by aaitbelh         ###   ########.fr        #
+#    Created: 2022/08/27 15:53:59 by aaitbelh          #+#    #+#              #
+#    Updated: 2022/08/27 15:54:28 by aaitbelh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Form
+NAME = a.out
 
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
-CC = c++
+CC = clang++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98 
 
 
 all : $(NAME)

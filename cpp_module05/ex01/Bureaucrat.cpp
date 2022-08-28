@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 14:22:28 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/23 16:09:12 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:59:24 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 void Bureaucrat::signForm(Form &form)
 {
-	if(getGrade() <= form.getGrade())
+	try
+	{
+		form.beSigned(*this);
 		std::cout << this->getName() << " signed " << form.getName() << std::endl;
-	else
+		
+	}
+	catch(const std::exception& e)
 	{
 		std::cout << this->getName() << " couldn’t sign " << form.getName() << " because ";
-		throw(form.GradeTooLowExceptions);
+		throw ;
 	}
 }
 
@@ -53,13 +57,13 @@ std::string const Bureaucrat::getName()
 	return (this->name);
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade()const
 {
 	return (this->Grade);
 }
 
 
-Bureaucrat::Bureaucrat():name("NONAME_SET"), Grade(0){
+Bureaucrat::Bureaucrat():name("NONAME_SET"), Grade(150){
 }
 
 Bureaucrat::Bureaucrat(std::string const name, int Grade):name(name), Grade(Grade){	
@@ -76,9 +80,6 @@ Bureaucrat::Bureaucrat(Bureaucrat &Other)
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat &Other)
 {
-	std::string *tmp;
-	tmp = const_cast<std::string*>(&name);
-	*tmp = Other.getName();
 	this->Grade = Other.getGrade();
 	return (*this);
 }
@@ -86,7 +87,7 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat &Other)
 Bureaucrat::~Bureaucrat(){	
 }
 
-std::ostream & operator<<(std::ostream &out, Bureaucrat bureaucrat)
+std::ostream & operator<<(std::ostream &out, Bureaucrat &bureaucrat)
 {
 	out << bureaucrat.getName() << ", bureaucrat grade " 
 	<< bureaucrat.getGrade() << " .";

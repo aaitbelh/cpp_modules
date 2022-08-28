@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 14:54:47 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/23 15:14:42 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:41:11 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,10 @@ class Form
 		int getGrade()const;
 		int getExec()const;
 		Form(Form &Other);
-		void beSigned(Bureaucrat &Bureaucrat);
+		void beSigned(const Bureaucrat &Bureaucrat);
 		Form& operator=(Form &Other);
 		~Form();	
 };
+std::ostream& operator<<(std::ostream& out, Form form);
 
 #endif

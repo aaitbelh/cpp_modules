@@ -6,31 +6,37 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 11:35:24 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/25 16:58:53 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/26 10:31:06 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
-#include "Bureaucrat.hpp"
+# include "Intern.hpp"
+//PresidentialPardonForm
+//RobotomyRequestForm
+//ShrubberyCreationForm
+void f()
+{
+		Intern JHENEFER;
+		Form *RIKO;
+		int del = 0;
+		try{
+			RIKO = JHENEFER.makeForm("d", "JHENEFER");
+			del = 1;
+			Bureaucrat RUGO("RUGO", 1);
+			RUGO.signForm(*RIKO);
+			RIKO->beSigned(RUGO);
+			RIKO->execute(RUGO);
+		}
+		catch(std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+		if(del == 1)
+		{
+			delete RIKO;
+		}
+}
 int main()
 {
-	
-	try
-	{
-		Bureaucrat a("NANACHI", 150);
-		Form KIRA("KIRA", 149, 0);
-		Form RYOK("RYOK", 1, 0);
-		a.signForm(KIRA);
-		KIRA.beSigned(a);
-		RYOK = KIRA;
-		std::cout << RYOK.getName() << std::endl;
-		std::cout << RYOK.getGrade() << std::endl;
-		std::cout << RYOK.getSigne() << std::endl;
-	}
-	catch(std::exception &e)
-	{
-		std::cout <<e.what() << std::endl;
-	}
+	f();
 }

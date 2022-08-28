@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 14:22:28 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/22 15:47:04 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:56:26 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void Bureaucrat::Increment()
 }
 
 
-std::string const Bureaucrat::getName()
+std::string const Bureaucrat::getName()const
 {
 	return (this->name);
 }
@@ -48,7 +48,7 @@ int Bureaucrat::getGrade()
 }
 
 
-Bureaucrat::Bureaucrat():name("NONAME_SET"), Grade(0){
+Bureaucrat::Bureaucrat():name("NONAME_SET"), Grade(150){
 }
 
 Bureaucrat::Bureaucrat(std::string const name, int Grade):name(name), Grade(Grade){	
@@ -65,9 +65,6 @@ Bureaucrat::Bureaucrat(Bureaucrat &Other)
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat &Other)
 {
-	std::string *tmp;
-	tmp = const_cast<std::string*>(&name);
-	*tmp = Other.getName();
 	this->Grade = Other.getGrade();
 	return (*this);
 }
@@ -75,7 +72,7 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat &Other)
 Bureaucrat::~Bureaucrat(){	
 }
 
-std::ostream & operator<<(std::ostream &out, Bureaucrat bureaucrat)
+std::ostream & operator<<(std::ostream &out, Bureaucrat& bureaucrat)
 {
 	out << bureaucrat.getName() << ", bureaucrat grade " 
 	<< bureaucrat.getGrade() << " .";

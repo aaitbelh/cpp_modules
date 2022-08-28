@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 20:01:43 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/25 18:53:51 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/25 17:37:23 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 PresidentialPardonForm::PresidentialPardonForm():Form("PresidentialPardonForm",25, 5),target("__NONAMESET"){
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target):Form("PresidentialPardonForm",25, 5),target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target):Form(target,25, 5),target(target)
 {
 	
 }

@@ -6,13 +6,18 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 15:06:08 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/25 19:21:08 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/26 10:34:16 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-std::ostream& operator<<(std::ostream& out, Form form)
+const char* FormNotSigned::what()const throw()
+{
+	return ("FORM NOT SIGNED :)");
+}
+
+std::ostream& operator<<(std::ostream& out, Form& form)
 {
 	out << form.getName() << " form, " << form.getGrade()
 	 << " Form Grad" << form.getExec() << " Form execute" << "Signed:" 
@@ -30,23 +35,30 @@ const char* GradeTooHighExceptions::what() const throw()
 	return ("Grade too High");
 }
 
-Form::Form():name("_NONAMESET"),signe(0),Grade(150),execute(150){
+Form::Form():name("NOTSET"),signe(0),Grade(150),Execute(150){
+	if(Grade < 1)
+		throw(GradeTooHighExceptions);
+	if(Grade > 150)
+		throw(GradeTooLowExceptions);
 }
 Form::Form(std::string name, int Grade, int execute)
-:name(name),signe(0),Grade(Grade),execute(execute){
+:name(name),signe(0),Grade(Grade),Execute(execute){
 	if(Grade < 1)
 		throw(GradeTooHighExceptions);
 	if(Grade > 150)
 		throw(GradeTooLowExceptions);
 }
 
-Form::Form(Form &Other):name("_NONAMESET"),signe(0),Grade(150),execute(150)
+Form::Form(Form &Other):Grade(150),Execute(150)
 {
 	*this = Other;
 }
 Form& Form::operator=(Form& Other)
 {	
+	*(const_cast<int*>(&Grade)) = Other.getGrade();
+	const_cast<std::string&>(name) = Other.getName();
 	this->signe = Other.getSigne();
+	*(const_cast<int*>(&Execute)) = Other.getExec();
 	return *this;
 }
 
@@ -55,7 +67,7 @@ int Form::getSigne()const{
 }
 int Form::getExec()const 
 {
-	return this->execute;
+	return this->Execute;
 }
 int Form::getGrade()const{
 	return this->Grade;
@@ -65,12 +77,12 @@ std::string const Form::getName()const
 	return (this->name);
 }
 
-void Form::beSigned(Bureaucrat const &Bureaucrat)
+void Form::beSigned(Bureaucrat Bureaucrat)
 {
 	if(Bureaucrat.getGrade() <= this->getGrade())
 		this->signe = 1;
 	else
-		throw(Form::GradeTooLowExceptions);
+		throw (this->GradeTooLowExceptions);
 }
 Form::~Form()
 {

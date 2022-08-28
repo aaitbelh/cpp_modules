@@ -6,19 +6,20 @@
 #    By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/21 14:31:23 by aaitbelh          #+#    #+#              #
-#    Updated: 2022/08/24 18:18:57 by aaitbelh         ###   ########.fr        #
+#    Updated: 2022/08/26 10:03:10 by aaitbelh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Form
+NAME = a.out
 
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp\
+	Intern.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
-CC = c++
+CC = clang++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 
 
 all : $(NAME)
