@@ -1,37 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convertion.hpp                                     :+:      :+:    :+:   */
+/*   Identify.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/27 16:58:27 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/28 19:10:27 by aaitbelh         ###   ########.fr       */
+/*   Created: 2022/08/29 15:55:03 by aaitbelh          #+#    #+#             */
+/*   Updated: 2022/08/29 16:17:05 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERTION_HPP
-#define CONVERTION_HPP
-
-#include <iostream> 
-#include <cctype>
-#include <string>
-#include <iomanip>
-#include "convertion.hpp"
+#ifndef IDENTIFY_HPP
+#define IDENTIFY_HPP
 #include <cmath>
-#include <climits>
+#include <iostream>
 
-#define DEFAULT 0
-#define INT 1
-#define FLOAT 2
-#define DOUBLE 3
-#define NANINF 4
-#define CHAR 5
+class Base
+{
+	public:
+		Base(){};
+		virtual ~Base(){};
+};
 
-void 	Processing(std::string var);
-void _isdouble(double num);
-void _isfloat(float num);
-void _isint(int num);
-void _ischar(char c);
-int _CheckType(std::string var);
+class A : public Base
+{
+	public:
+		A(){};
+		~A(){};
+};
+
+class B : public Base
+{
+	public:
+		B(){};
+		~B(){};
+};
+
+class C : public Base
+{
+	public:
+		C(){};
+		~C(){};
+};
+
+Base * generate(void);
+void identify(Base* p);
+void identify(Base& p);
 #endif

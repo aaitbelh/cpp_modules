@@ -6,13 +6,13 @@
 #    By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/27 15:53:59 by aaitbelh          #+#    #+#              #
-#    Updated: 2022/08/28 19:15:00 by aaitbelh         ###   ########.fr        #
+#    Updated: 2022/08/29 15:34:42 by aaitbelh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
 
-SRC = main.cpp convertion.cpp
+SRC = main.cpp Serialization.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
