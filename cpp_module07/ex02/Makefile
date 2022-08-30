@@ -5,20 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/27 15:53:59 by aaitbelh          #+#    #+#              #
-#    Updated: 2022/08/30 18:54:19 by aaitbelh         ###   ########.fr        #
+#    Created: 2022/08/30 18:29:15 by aaitbelh          #+#    #+#              #
+#    Updated: 2022/08/30 18:29:25 by aaitbelh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = indentify
 
-SRC = main.cpp Identify.cpp
+NAME = a.out
+
+SRC = main.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
 CC = clang++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98 
+CFLAGS = -Wall -Werror -Wextra
 
 
 all : $(NAME)

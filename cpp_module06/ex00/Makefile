@@ -6,11 +6,11 @@
 #    By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/27 15:53:59 by aaitbelh          #+#    #+#              #
-#    Updated: 2022/08/28 19:15:00 by aaitbelh         ###   ########.fr        #
+#    Updated: 2022/08/30 18:54:07 by aaitbelh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = convertion
 
 SRC = main.cpp convertion.cpp
 
