@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+         #
+#    By: casper <casper@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/27 15:53:59 by aaitbelh          #+#    #+#              #
-#    Updated: 2022/08/29 21:38:28 by aaitbelh         ###   ########.fr        #
+#    Created: 2022/08/31 11:14:37 by casper            #+#    #+#              #
+#    Updated: 2022/08/31 11:36:35 by casper           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = find
 
 SRC = main.cpp
 

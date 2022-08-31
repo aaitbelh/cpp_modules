@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: casper <casper@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 21:38:28 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/30 13:00:46 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/31 10:19:15 by casper           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,21 @@
 #include <string>
 #include <iostream>
 
-template<typename T>
-template<typename N>
-void foo(T a, N b)
+class Awesome
 {
-	std::cout << a << 
-}
-
-void _simpleprint(int &value)
-{
-	std::cout << value << std::endl;
-}
-
-template<typename T> void ADD1(T &value)
-{
-	value += 10;
-}
-
-
-int main()
-{
-	int array[5] = {1,2,3,4,5};
-
-	iter(&array[0],5, _simpleprint);
-	for(int i = 0; i < (int)(sizeof(array) / sizeof(array[0])); ++i)
-		std::cout << array[i] << std::endl;
+public:
+	Awesome( void ) : _n( 42 ) { return; }
+	int get( void ) const { return this->_n; }
+private:
+	int _n;
+};
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
+template< typename T >
+void print( T const & x ) { std::cout << x << std::endl; return; }
+int main() {
+int tab[] = { 0, 1, 2, 3, 4 }; // <--- I never understood why you can't write int[] tab. Wouldn't that make more sense?
+Awesome tab2[5];
+iter( tab, 5, print<int>);
+iter( tab2, 5, print );
+return 0;
 }
