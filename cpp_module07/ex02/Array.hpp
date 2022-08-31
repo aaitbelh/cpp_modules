@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: casper <casper@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 18:29:10 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/31 13:53:16 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/31 15:22:16 by casper           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ template<typename T> class Array
 		{
 			return (this->Type[index]);
 		}
-		T& operatori[](nt index)
+		T& operator[](int index)
 		{
 			if(index < 0)
 				throw(std::overflow_error("ERROR: OVERFLOW"));
