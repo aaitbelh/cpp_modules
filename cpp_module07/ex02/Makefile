@@ -6,14 +6,14 @@
 #    By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/30 18:29:15 by aaitbelh          #+#    #+#              #
-#    Updated: 2022/08/30 23:00:10 by aaitbelh         ###   ########.fr        #
+#    Updated: 2022/08/31 13:54:38 by aaitbelh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = a.out
+NAME = array
 
-SRC = main.cpp Array.cpp
+SRC = main.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
