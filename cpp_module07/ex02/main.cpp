@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 22:07:40 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/31 11:01:31 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/08/31 20:34:37 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int foo()
 		{
 			std::cout << tmp[i] << " ";
 		}
+		std::cout << std::endl;
 	}
 	for (int i = 0; i < MAX_VAL; i++)
 	{
@@ -72,5 +73,5 @@ int foo()
 int main()
 {
 	foo();
-	system("leaks a.out");
+	system("leaks array");
 }
