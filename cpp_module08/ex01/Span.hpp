@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 12:00:54 by casper            #+#    #+#             */
-/*   Updated: 2022/08/31 22:23:41 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/09/01 14:46:36 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,20 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 class Span
 {
     private:
         unsigned int N;
         std::vector<int> array;
     public:
-        Span():N(0) {};
-        Span(unsigned int n);
-        Span(Span &Other);
-        Span& operator=(Span &Other);
+        Span(unsigned const int n);
+        Span(Span const &Other);
+        Span& operator=(Span const &Other);
         int shortestSpan();
         int longestSpan();
         void addNumber(int n);
+        void addRange(int *begin, int *end);
         ~Span() {};
 };
 

@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 19:31:25 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/07/31 21:19:37 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/09/01 11:53:58 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int main( void ) {
 	Fixed a;
+	Fixed H(1.2f);
 	Fixed const b( 10 );
 	Fixed const c( 42.42f );
 	Fixed const d( b );

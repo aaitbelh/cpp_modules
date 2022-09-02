@@ -6,7 +6,7 @@
 /*   By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 14:39:02 by aaitbelh          #+#    #+#             */
-/*   Updated: 2022/08/03 18:15:22 by aaitbelh         ###   ########.fr       */
+/*   Updated: 2022/09/01 14:16:28 by aaitbelh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <iostream>
 int main( void ) {
-	Fixed a(1.2f);
+	Fixed a = Fixed(1);
 	Fixed b(1.3f);
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;

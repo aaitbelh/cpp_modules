@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: casper <casper@student.42.fr>              +#+  +:+       +#+         #
+#    By: aaitbelh <aaitbelh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 11:14:37 by casper            #+#    #+#              #
-#    Updated: 2022/08/31 11:36:35 by casper           ###   ########.fr        #
+#    Updated: 2022/09/02 08:43:57 by aaitbelh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJS = $(SRC:.cpp=.o)
 
 CC = clang++
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 
 all : $(NAME)
